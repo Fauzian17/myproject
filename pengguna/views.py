@@ -41,17 +41,20 @@ def formulir_detail(request, pk):
 
 
 def create_formulir(request):
-    template = 'dashboard/snippets/formulir.html'
     if request.method == "POST":
         form = FormulirForm(request.POST, request.FILES)
         if form.is_valid():
-            formulir = form.save()
-            return redirect('formulir_detail', pk=formulir.pk)  # Arahkan ke halaman detail dengan pk
+            form.save()
+            return redirect('formulir_detail')  # Ganti dengan URL halaman sukses Anda
     else:
         form = FormulirForm()
 
-    context = {'form': form, 'title': 'Buat Formulir Baru'}
-    return render(request, template, context)
+    context={
+        'form': form, 
+        'title': 'Formulir Pendaftaran'
+        }
+
+    return render(request,'dashboard/snippets/formulir.html', context)
 
 def formulir_list(request):
     formulirs = Formulir.objects.all()
