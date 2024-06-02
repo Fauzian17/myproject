@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +20,6 @@
   <!-- CSS -->
   <link rel="stylesheet" href='{% static "admin/assets/css/argon.css" %}' ?v=1.2.1 type="text/css">
 </head>
-
 <body>
   <!-- Sidenav -->
   <nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-dark" id="sidenav-main">
@@ -29,7 +27,7 @@
       <!-- Brand -->
       <div class="sidenav-header  d-flex  align-items-center">
         <a class="navbar-brand" href="javascript:void(0)">
-          <h1><span class="text-red">PMB</span> <span class="text-white">ONLINE</span></h6>
+          <h1><span class="text-red">PMB</span> <span class="text-white">ONLINE</span></h1>
         </a>
         <div class=" ml-auto ">
           <!-- Sidenav toggler -->
@@ -174,13 +172,13 @@
               {% for form in formulir_list %}
               <tr>
                 <td class="table-user">
-                  <b>{{form.nama}}</b>
+                  <b>{{ form.nama }}</b>
                 </td>
                 <td>
-                  <span class="text-muted">{{form.tanggal_lahir}}</span>
+                  <span class="text-muted">{{ form.tanggal_lahir }}</span>
                 </td>
                 <td>
-                  <a href="#!" class="font-weight-bold">{{form.email}}</a>
+                  <a href="#!" class="font-weight-bold">{{ form.email }}</a>
                 </td>
                 <td class="table-actions">
                   <a href="#!" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
@@ -207,7 +205,6 @@
         </div>
       </footer>
     </div>
-
   <script src='{% static "admin/assets/vendor/jquery/dist/jquery.min.js" %}'></script>
   <script src='{% static "admin/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js" %}'></script>
   <script src='{% static "admin/assets/vendor/js-cookie/js.cookie.js" %}'></script>
@@ -221,10 +218,7 @@
   <script src='{% static "admin/assets/vendor/datatables.net-buttons/js/buttons.flash.min.js" %}'></script>
   <script src='{% static "admin/assets/vendor/datatables.net-buttons/js/buttons.print.min.js" %}'></script>
   <script src='{% static "admin/assets/vendor/datatables.net-select/js/dataTables.select.min.js" %}'></script>
-
-  <script src='{% static "admin/assets/js/argon.js" %}' ?v=1.2.1></script>
-  
-  <script src="./assets/js/demo.min.js"></script>
+  <script src='{% static "admin/assets/js/argon.js" %}'?v=1.2.1></script>
+  <script src="{% static 'admin/assets/js/demo.min.js'%}"></script>
 </body>
-
 </html>

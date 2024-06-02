@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth import views as auth_views
+
 
 from myproject.authtentifikasi import akun_login, akun_registrasi
 from myproject.views import (
@@ -28,14 +30,15 @@ from myproject.views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    # path('form-pendaftaran/', form_pendaftaran, name='form-pendaftaran'),
     path('upload-berkas/', upload_berkas, name='upload-berkas'),
     path('contact/', contact, name='contact'),
     path('authentifikasi/login', akun_login, name='akun_login'),
-    # path('logout/', akun_logout, name='logout'),
     path('authentifikasi/registrasi', akun_registrasi, name='akun_registrasi'),
     path('dashboard/', dashboard, name='dashboard'),
     path('', include('pengguna.urls')),
-    # path('create_formulir',create_formulir,name='formulir'),
+    path('login/', auth_views.LoginView.as_view(template_name='login/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    
+    
 ]
 

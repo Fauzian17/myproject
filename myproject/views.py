@@ -42,3 +42,8 @@ def dashboard(request):
         'title':'Halaman Dashboard'
     }
     return render(request,template,context)
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import TemplateView
+
+class SomeView(LoginRequiredMixin, TemplateView):
+    template_name = 'login/login.html'

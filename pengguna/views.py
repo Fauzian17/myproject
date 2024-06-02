@@ -65,3 +65,12 @@ def formulir_list(request):
     return render(request, 'dashboard/snippets/formulir_list.html', context)
 
 
+def some_view(request):
+    context = {
+        'formulir_list': Formulir.objects.all(),  # Misalnya Anda memiliki formulir list di sini
+        'user': request.user
+    }
+    return render(request, 'content/admin.html', context)
+
+
+
